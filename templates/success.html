@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>Congratulations!</h1>
+      </div>
+          <p class="lead">{% trans 'Your license is created and is available' %}<a href="{% url 'view_license' short_url %}">&nbsp;Here</a></p>
+    </div>
+{% endblock %}
+

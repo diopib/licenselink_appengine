@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block content %}
+    <!-- Begin page content -->
+    <div class="container">
+      <div class="page-header">
+        <h1>License Link</h1>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p class="lead">{% trans 'Just provide your license details, dynamically create your license and get short link!' %}</p>
+        </div>
+
+        <div class="col-md-6">
+          <form method="POST" action="." class="form-horizontal">{% csrf_token %}
+
+            {% for f in form %}
+              <div class="form-group {% if f.error %} has-error {% endif %}">
+                <label>{{ f.label }}</label>
+                {{ f }}
+                {% if f.error %}<p class="text-danger">{{ f.error }}</p>{% endif %}
+              </div>
+            {% endfor %}
+
+            <button type="submit" class="btn">{% trans 'Go!' %}</button>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
