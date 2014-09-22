@@ -50,7 +50,7 @@ STATIC_URL = '/static/'
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '../templates'),)
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.join(os.path.dirname(__file__), 'static')),
+    os.path.join(os.path.join(os.path.dirname(__file__), '/static')),
 )
 
 ROOT_URLCONF = 'licenselink_appengine.urls'
